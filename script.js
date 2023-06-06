@@ -71,54 +71,54 @@ function singleRound() {
 function game() {
     alert("Play 5 rounds of the Rock - Paper - Scissors game to see if you can win with the computer");
 
-    let Qwin = 0;
-    let Qlose = 0;
+    let partialWin = 0;
+    let partialLose = 0;
 
     let partialOutput1 = singleRound();
     if (partialOutput1 === "win") {
-        Qwin++;
+        partialWin++;
     }
     else if (partialOutput1 === "lose") {
-        Qlose++;
+        partialLose++;
     }
 
     let partialOutput2 = singleRound();
     if (partialOutput2 === "win") {
-        Qwin++;
+        partialWin++;
     }
     else if (partialOutput2 === "lose") {
-        Qlose++;
+        partialLose++;
     }
 
     let partialOutput3 = singleRound();
     if (partialOutput3 === "win") {
-        Qwin++;
+        partialWin++;
     }
     else if (partialOutput3 === "lose") {
-        Qlose++;
+        partialLose++;
     }
 
     let partialOutput4 = singleRound();
     if (partialOutput4 === "win") {
-        Qwin++;
+        partialWin++;
     }
     else if (partialOutput4 === "lose") {
-        Qlose++;
+        partialLose++;
     }
 
     let partialOutput5 = singleRound();
     if (partialOutput5 === "win") {
-        Qwin++;
+        partialWin++;
     }
     else if (partialOutput5 === "lose") {
-        Qlose++;
+        partialLose++;
     }
 
-    if (Qwin > Qlose) {
+    if (partialWin > partialLose) {
         alert("You've won. Your score is: " + partialOutput1 + " - " + partialOutput2 + " - " + partialOutput3 + " - " + partialOutput4 + " - " + partialOutput5)
     }
 
-    else if (Qlose > Qwin) {
+    else if (partialLose > partialWin) {
         alert("You've lost. Your score is: " + partialOutput1 + " - " + partialOutput2 + " - " + partialOutput3 + " - " + partialOutput4 + " - " + partialOutput5)
     }
 
