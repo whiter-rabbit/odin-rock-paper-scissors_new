@@ -15,11 +15,43 @@ function getComputerChoice() {
     return computerChoice;
 }
 
+/*
+//INFO : below  WORKING ORIGINAL FUNCTION 
 
 function playerSelection() {
     let playerChoice = prompt("Choose: Rock, Paper or Scissors").toLowerCase();
     return playerChoice;
 }
+*/
+
+const rockBtn = document.getElementById('rock-btn');
+const paperBtn = document.getElementById('paper-btn');
+const scissorsBtn = document.getElementById('scissors-btn');
+
+const playBtn = document.getElementById("playBtn");
+
+rockBtn.addEventListener("click", e => {rockBtn.classList.add("chosen")});
+paperBtn.addEventListener("click", e => {paperBtn.classList.add("chosen")});
+scissorsBtn.addEventListener("click", e => {scissorsBtn.classList.add("chosen")});
+
+
+function playerSelection() {
+    if (rockBtn.classList.contains("chosen")) {
+        return "rock"
+    }
+    else if (paperBtn.classList.contains("chosen")) {
+        return "paper"
+    }
+    else if (scissorsBtn.classList.contains("chosen")) {
+        return "scis"
+    };
+
+
+    console.log("playerChoice = " + playerChoice);
+    console.log(typeof playerChoice);
+    
+}
+
 
 const win = ["win", 1];
 const lose = ["lose", -1];
@@ -65,12 +97,13 @@ function singleRound() {
         console.log("Tie! Scissors vs Scissors");
         return tie;
     }
-    else {
-        alert("Error. Type: Rock, Paper or Scissors");
-        return singleRound();
-    }
+    // else {
+    //     alert("Error. Type: Rock, Paper or Scissors");
+    //     return singleRound();
+    // }
 }
 
+/* INFO - below WORKING 5 ROUNDS GAME TO BE BROUGHT BACK 
 
 function game () {
     alert("Play 5 rounds of the Rock - Paper - Scissors game to see if you can win with the computer");
@@ -100,5 +133,37 @@ function game () {
 
 
 game();
+
+*/
+
+
+// INFO : below WORKING temporary 1 ROUND GAME 
+
+function game () {
+    alert("Play 1 round of the Rock - Paper - Scissors game to see if you can win with the computer");
+
+  const totalOutput =[];
+  let partialOutput;
+  let totalScore = 0;
+
+  for (let i = 0; i < 1; i++) {
+    partialOutput = singleRound();
+    totalOutput.push(partialOutput[0]);
+    totalScore = totalScore + partialOutput[1];
+  }
+    
+    if (totalScore > 0) {
+        alert("You've WON. Your score is: " + totalOutput)
+    }
+    
+    else if (totalScore === 0) {
+        alert("You've TIED. Your score is: " + totalOutput)
+    }
+
+    else if (totalScore < 0) {
+        alert("You've LOST. Your score is: " + totalOutput)
+    }
+}
+
 
 
