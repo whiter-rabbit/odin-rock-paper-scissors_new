@@ -1,5 +1,3 @@
-console.log("Play Rock-Paper-Scissors")
-
 
 function getComputerChoice() {
     computerNumber = (Math.floor(Math.random() * 3)) + 1;
@@ -15,24 +13,30 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-/*
-//INFO : below  WORKING ORIGINAL FUNCTION 
-
-function playerSelection() {
-    let playerChoice = prompt("Choose: Rock, Paper or Scissors").toLowerCase();
-    return playerChoice;
-}
-*/
-
 const rockBtn = document.getElementById('rock-btn');
 const paperBtn = document.getElementById('paper-btn');
 const scissorsBtn = document.getElementById('scissors-btn');
 
 const playBtn = document.getElementById("playBtn");
 
-rockBtn.addEventListener("click", e => {rockBtn.classList.add("chosen")});
-paperBtn.addEventListener("click", e => {paperBtn.classList.add("chosen")});
-scissorsBtn.addEventListener("click", e => {scissorsBtn.classList.add("chosen")});
+rockBtn.addEventListener("click", function(e) {
+    rockBtn.classList.add("chosen");
+    paperBtn.classList.toggle("chosen", false);
+    scissorsBtn.classList.toggle("chosen", false);
+    singleRound();
+});
+paperBtn.addEventListener("click", function(e) {
+    paperBtn.classList.add("chosen");
+    rockBtn.classList.toggle("chosen", false);
+    scissorsBtn.classList.toggle("chosen", false);
+    singleRound();
+});
+scissorsBtn.addEventListener("click",  function(e) {
+    scissorsBtn.classList.add("chosen");
+    rockBtn.classList.toggle("chosen", false);
+    paperBtn.classList.toggle("chosen", false);
+    singleRound();
+});
 
 
 function playerSelection() {
@@ -43,7 +47,7 @@ function playerSelection() {
         return "paper"
     }
     else if (scissorsBtn.classList.contains("chosen")) {
-        return "scis"
+        return "scissors"
     };
 
 
@@ -52,10 +56,10 @@ function playerSelection() {
     
 }
 
-
 const win = ["win", 1];
 const lose = ["lose", -1];
 const tie = ["tie", 0];
+
 
 function singleRound() {
     let a = playerSelection();
@@ -103,10 +107,10 @@ function singleRound() {
     // }
 }
 
-/* INFO - below WORKING 5 ROUNDS GAME TO BE BROUGHT BACK 
+//INFO - below WORKING 5 ROUNDS GAME TO BE BROUGHT BACK 
 
 function game () {
-    alert("Play 5 rounds of the Rock - Paper - Scissors game to see if you can win with the computer");
+    //alert("Play 5 rounds of the Rock - Paper - Scissors game to see if you can win with the computer");
 
   const totalOutput =[];
   let partialOutput;
@@ -132,11 +136,11 @@ function game () {
 }
 
 
-game();
-
-*/
+//game();
 
 
+
+/*
 // INFO : below WORKING temporary 1 ROUND GAME 
 
 function game () {
@@ -165,5 +169,5 @@ function game () {
     }
 }
 
-
+*/
 
