@@ -5,6 +5,7 @@ const scissorsBtn = document.getElementById('scissors-btn');
 const scores = document.querySelector(".scores");
 let score = document.querySelector(".score")
 const result = document.querySelector(".result");
+const infoAboutRepeat = document.querySelector(".info-repeat")
 
 rockBtn.addEventListener("click", function(e) {
     rockBtn.classList.add("chosen");
@@ -36,7 +37,6 @@ let totalScore = 0
 
 function game() {
     
-    
     if (gamesPlayed < 5 )  {
         singleRound();
     }
@@ -44,14 +44,26 @@ function game() {
         singleRound();
         gameScore();
     }
+    else {
+        gamesPlayed = 0;
+        for (let i = 0; i < 5; i++) {
+            scores.firstElementChild.remove();
+        }
+        result.innerText = "";
+        infoAboutRepeat.innerText = "";
+        rockBtn.classList.toggle("chosen", false);
+        paperBtn.classList.toggle("chosen", false);
+        scissorsBtn.classList.toggle("chosen", false);
+    }
 }
+
 
 function singleRound() {
     let a = playerSelection();
     let b = getComputerChoice();
 
     score = document.createElement('p');
-    scores.prepend(score);
+    score.classList.add("score")
     
         if (a === "rock" && b === "rock") {
             scores.prepend(score);
@@ -120,88 +132,6 @@ function singleRound() {
 
 
 
-
-
-
-
-/*
-function singleRound() {
-    let a = playerSelection();
-    let b = getComputerChoice();
-    
-    // BELOW: creates a new node that will appear above the one with 
-    //result (as a first child). For adding future results.
-    // const resultNew = document.createElement('div'); 
-    // resultNew.classList.add('result'); 
-    // scores.prepend(resultNew)
-    // resultNew.innerText ="Test";
-    
-    if (gamesPlayed < 5)  {
-        
-       
-        if (a === "rock" && b === "rock") {
-            scores.innerText ="Tie! Rock vs Rock";
-            rockBtn.classList.toggle("chosen", false);
-            totalScore = totalScore + 0;
-            return totalScore;
-            
-        }
-        else if (a === "rock" && b === "paper") {
-            scores.innerText = "You Lose! Rock loses against Paper";
-            rockBtn.classList.toggle("chosen", false);
-            totalScore = totalScore - 1;
-            return totalScore;
-        }
-        else if (a === "rock" && b === "scissors") {
-            scores.innerText = "You Win! Rock beats Scissors";
-            rockBtn.classList.toggle("chosen", false);
-            totalScore = totalScore + 1;
-            return totalScore;
-        }
-        else if (a === "paper" && b === "rock") {
-            scores.innerText = "You Win! Paper beats Rock";
-            paperBtn.classList.toggle("chosen", false);
-            totalScore = totalScore + 1;
-            return totalScore;
-        }
-        else if (a === "paper" && b === "paper") {
-            scores.innerText = "Tie! Paper vs Paper";
-            paperBtn.classList.toggle("chosen", false);
-            totalScore = totalScore + 0;
-            return totalScore;
-        }
-        else if (a === "paper" && b === "scissors") {
-            scores.innerText = "You Lose! Paper loses against Scissors";
-            paperBtn.classList.toggle("chosen", false);
-            totalScore = totalScore - 1;
-            return totalScore;
-        }
-        else if (a === "scissors" && b === "rock") {
-            scores.innerText = "You Lose! Scissors lose against Rock";
-            scissorsBtn.classList.toggle("chosen", false);
-            totalScore = totalScore - 1;
-            return totalScore;
-        }
-        else if (a === "scissors" && b === "paper") {
-            scores.innerText = "You Win! Scissors beats Paper";
-            scissorsBtn.classList.toggle("chosen", false);
-            totalScore = totalScore + 1;
-            return totalScore;
-        }
-        else if (a === "scissors" && b === "scissors") {
-            scores.innerText = "Tie! Scissors vs Scissors";
-            scissorsBtn.classList.toggle("chosen", false);
-            totalScore = totalScore + 0;
-            return totalScore;
-        }
-    }
-    else {
-        gameScore();
-    }
-}
-
-*/
-
 function getComputerChoice() {
     computerNumber = (Math.floor(Math.random() * 3)) + 1;
     if (computerNumber === 1) {
@@ -245,6 +175,7 @@ function playerSelection() {
     else if (totalScore < 0) {
         result.innerText = "You've LOST";
     }
+    infoAboutRepeat.innerText = "Click on rock, paper or scissors button if you would like to play again."
   }
 
     
