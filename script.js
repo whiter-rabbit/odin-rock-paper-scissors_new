@@ -2,8 +2,8 @@ const rockBtn = document.getElementById('rock-btn');
 const paperBtn = document.getElementById('paper-btn');
 const scissorsBtn = document.getElementById('scissors-btn');
 
-const result = document.querySelector(".result");
 const scores = document.querySelector(".scores");
+const result = document.querySelector(".result");
 
 let gamesPlayed = 0
 
@@ -33,13 +33,7 @@ scissorsBtn.addEventListener("click",  function(e) {
 });
 
 
-// const win = ["win", 1];
-// const lose = ["lose", -1];
-// const tie = ["tie", 0];
-
 let totalScore = 0
-
-
 
 function singleRound() {
     let a = playerSelection();
@@ -54,135 +48,68 @@ function singleRound() {
     
     if (gamesPlayed < 5)  {
         
-        console.log("passed")
-
        
         if (a === "rock" && b === "rock") {
-            result.innerText ="Tie! Rock vs Rock";
+            scores.innerText ="Tie! Rock vs Rock";
             rockBtn.classList.toggle("chosen", false);
             totalScore = totalScore + 0;
             return totalScore;
             
         }
         else if (a === "rock" && b === "paper") {
-            result.innerText = "You Lose! Rock loses against Paper";
+            scores.innerText = "You Lose! Rock loses against Paper";
             rockBtn.classList.toggle("chosen", false);
             totalScore = totalScore - 1;
             return totalScore;
         }
         else if (a === "rock" && b === "scissors") {
-            result.innerText = "You Win! Rock beats Scissors";
+            scores.innerText = "You Win! Rock beats Scissors";
             rockBtn.classList.toggle("chosen", false);
             totalScore = totalScore + 1;
             return totalScore;
         }
         else if (a === "paper" && b === "rock") {
-            result.innerText = "You Win! Paper beats Rock";
+            scores.innerText = "You Win! Paper beats Rock";
             paperBtn.classList.toggle("chosen", false);
             totalScore = totalScore + 1;
             return totalScore;
         }
         else if (a === "paper" && b === "paper") {
-            result.innerText = "Tie! Paper vs Paper";
+            scores.innerText = "Tie! Paper vs Paper";
             paperBtn.classList.toggle("chosen", false);
             totalScore = totalScore + 0;
             return totalScore;
         }
         else if (a === "paper" && b === "scissors") {
-            result.innerText = "You Lose! Paper loses against Scissors";
+            scores.innerText = "You Lose! Paper loses against Scissors";
             paperBtn.classList.toggle("chosen", false);
             totalScore = totalScore - 1;
             return totalScore;
         }
         else if (a === "scissors" && b === "rock") {
-            result.innerText = "You Lose! Scissors lose against Rock";
+            scores.innerText = "You Lose! Scissors lose against Rock";
             scissorsBtn.classList.toggle("chosen", false);
             totalScore = totalScore - 1;
             return totalScore;
         }
         else if (a === "scissors" && b === "paper") {
-            result.innerText = "You Win! Scissors beats Paper";
+            scores.innerText = "You Win! Scissors beats Paper";
             scissorsBtn.classList.toggle("chosen", false);
             totalScore = totalScore + 1;
             return totalScore;
         }
         else if (a === "scissors" && b === "scissors") {
-            result.innerText = "Tie! Scissors vs Scissors";
+            scores.innerText = "Tie! Scissors vs Scissors";
             scissorsBtn.classList.toggle("chosen", false);
             totalScore = totalScore + 0;
             return totalScore;
         }
     }
     else {
-        console.log("passed 5")
         gameScore();
     }
 }
 
-
-/*
-INFO : below working function
-function singleRound() {
-    let a = playerSelection();
-    let b = getComputerChoice();
-
-    
-    // BELOW: creates a new node that will appear above the one with 
-    //result (as a first child). For adding future results.
-    //const resultNew = document.createElement('div'); 
-    //resultNew.classList.add('result'); 
-    //scores.prepend(resultNew)
-    //resultNew.innerText ="Test";
-    
-
-    if (a === "rock" && b === "rock") {
-        result.innerText ="Tie! Rock vs Rock";
-        rockBtn.classList.toggle("chosen", false);
-        return tie;
-        
-    }
-    else if (a === "rock" && b === "paper") {
-        result.innerText = "You Lose! Rock loses against Paper";
-        rockBtn.classList.toggle("chosen", false);
-        return lose;
-    }
-    else if (a === "rock" && b === "scissors") {
-        result.innerText = "You Win! Rock beats Scissors";
-        rockBtn.classList.toggle("chosen", false);
-        return win;
-    }
-    else if (a === "paper" && b === "rock") {
-        result.innerText = "You Win! Paper beats Rock";
-        paperBtn.classList.toggle("chosen", false);
-        return win;
-    }
-    else if (a === "paper" && b === "paper") {
-        result.innerText = "Tie! Paper vs Paper";
-        paperBtn.classList.toggle("chosen", false);
-        return tie;
-    }
-    else if (a === "paper" && b === "scissors") {
-        result.innerText = "You Lose! Paper loses against Scissors";
-        paperBtn.classList.toggle("chosen", false);
-        return lose;
-    }
-    else if (a === "scissors" && b === "rock") {
-        result.innerText = "You Lose! Scissors lose against Rock";
-        scissorsBtn.classList.toggle("chosen", false);
-        return lose;
-    }
-    else if (a === "scissors" && b === "paper") {
-        result.innerText = "You Win! Scissors beats Paper";
-        scissorsBtn.classList.toggle("chosen", false);
-        return win;
-    }
-    else if (a === "scissors" && b === "scissors") {
-        result.innerText = "Tie! Scissors vs Scissors";
-        scissorsBtn.classList.toggle("chosen", false);
-        return tie;
-    }
-}
-*/
 
 function getComputerChoice() {
     computerNumber = (Math.floor(Math.random() * 3)) + 1;
@@ -211,135 +138,26 @@ function playerSelection() {
     }; 
 }
 
-/*
-INFO : function below WON'T work - stack overflow
-function game () {
-
-    const totalOutput =[];
-    let partialOutput = singleRound()
-    let totalScore = 0;
-    let gamesPlayed =0
-
-    if (singleRound === "rock" || singleRound === "paper" || singleRound === "scissors") {
-        console.log("passed1")
-    }
-  
-    // for (let i = 0; i < 5; i++) {
-    //   partialOutput = singleRound();
-    //   totalOutput.push(partialOutput[0]);
-    //   totalScore = totalScore + partialOutput[1];
-    // }
-      
-    //   if (totalScore > 0) {
-    //       alert("You've WON. Your score is: " + totalOutput)
-    //   }
-      
-    //   else if (totalScore === 0) {
-    //       alert("You've TIED. Your score is: " + totalOutput)
-    //   }
-  
-    //   else if (totalScore < 0) {
-    //       alert("You've LOST. Your score is: " + totalOutput)
-    //   }
-    else {
-        game();
-    }
-  }
-*/
-
-
-function game () {
-
-    const totalOutput =[];
-    let partialOutput;
-    let totalScore = 0;
-  
-    for (let i = 0; i < 5; i++) {
-      partialOutput = singleRound();
-      totalOutput.push(partialOutput[0]);
-      totalScore = totalScore + partialOutput[1];
-    }
-      
-     
-  }
-
 
   function gameScore () {
 
     console.log(totalScore);
 
     if (totalScore > 0) {
-        alert("You've WON")
+        //result.innerText ="You've WON";
+        console.log("You've WON")
     }
     
     else if (totalScore === 0) {
-        alert("You've TIED")
+        //result.innerText = "You've TIED";
+        console.log("You've TIED")
     }
 
     else if (totalScore < 0) {
-        alert("You've LOST")
+        //result.innerText ="You've LOST";
+        console.log("You've TIED")
     }
   }
 
     
   
-/*
-//INFO - below WORKING old 5 ROUNDS GAME 
-
-function game () {
-
-  const totalOutput =[];
-  let partialOutput;
-  let totalScore = 0;
-
-  for (let i = 0; i < 5; i++) {
-    partialOutput = singleRound();
-    totalOutput.push(partialOutput[0]);
-    totalScore = totalScore + partialOutput[1];
-  }
-    
-    if (totalScore > 0) {
-        alert("You've WON. Your score is: " + totalOutput)
-    }
-    
-    else if (totalScore === 0) {
-        alert("You've TIED. Your score is: " + totalOutput)
-    }
-
-    else if (totalScore < 0) {
-        alert("You've LOST. Your score is: " + totalOutput)
-    }
-}
-*/
-
-/*
-// INFO : below WORKING temporary 1 ROUND GAME 
-
-function game () {
-    alert("Play 1 round of the Rock - Paper - Scissors game to see if you can win with the computer");
-
-  const totalOutput =[];
-  let partialOutput;
-  let totalScore = 0;
-
-  for (let i = 0; i < 1; i++) {
-    partialOutput = singleRound();
-    totalOutput.push(partialOutput[0]);
-    totalScore = totalScore + partialOutput[1];
-  }
-    
-    if (totalScore > 0) {
-        alert("You've WON. Your score is: " + totalOutput)
-    }
-    
-    else if (totalScore === 0) {
-        alert("You've TIED. Your score is: " + totalOutput)
-    }
-
-    else if (totalScore < 0) {
-        alert("You've LOST. Your score is: " + totalOutput)
-    }
-}
-
-*/
-
