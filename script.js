@@ -6,14 +6,12 @@ const scores = document.querySelector(".scores");
 let score = document.querySelector(".score")
 const result = document.querySelector(".result");
 
-let gamesPlayed = 0
-
 rockBtn.addEventListener("click", function(e) {
     rockBtn.classList.add("chosen");
     paperBtn.classList.toggle("chosen", false);
     scissorsBtn.classList.toggle("chosen", false);
     gamesPlayed++;
-    singleRound();
+    game();
     
 });
 paperBtn.addEventListener("click", function(e) {
@@ -21,7 +19,7 @@ paperBtn.addEventListener("click", function(e) {
     rockBtn.classList.toggle("chosen", false);
     scissorsBtn.classList.toggle("chosen", false);
     gamesPlayed++;
-    singleRound();
+    game();
     
 });
 scissorsBtn.addEventListener("click",  function(e) {
@@ -29,12 +27,24 @@ scissorsBtn.addEventListener("click",  function(e) {
     rockBtn.classList.toggle("chosen", false);
     paperBtn.classList.toggle("chosen", false);
     gamesPlayed++;
-    singleRound();
+    game();
     
 });
 
-
+let gamesPlayed = 0
 let totalScore = 0
+
+function game() {
+    
+    
+    if (gamesPlayed < 5 )  {
+        singleRound();
+    }
+    else if (gamesPlayed === 5){
+        singleRound();
+        gameScore();
+    }
+}
 
 function singleRound() {
     let a = playerSelection();
@@ -43,16 +53,12 @@ function singleRound() {
     score = document.createElement('p');
     scores.prepend(score);
     
-    if (gamesPlayed <= 5 )  {
-        
-       
         if (a === "rock" && b === "rock") {
             scores.prepend(score);
             score.innerText ="Tie! Rock vs Rock";
             rockBtn.classList.toggle("chosen", false);
             totalScore = totalScore + 0;
             return totalScore;
-            
         }
         else if (a === "rock" && b === "paper") {
             scores.prepend(score);
@@ -110,11 +116,12 @@ function singleRound() {
             totalScore = totalScore + 0;
             return totalScore;
         }
-    }
-    else {
-        gameScore();
-    }
 }
+
+
+
+
+
 
 
 /*

@@ -4,12 +4,15 @@
     transform: scale(1.1);
 }
 
-.scores {
-    color: blue;
-}
+
 
 .result {
     color: red;
+}
+
+.scores  {
+    color: gray; 
+    font-size: 12px;
 }
 
 
