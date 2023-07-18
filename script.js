@@ -5,7 +5,7 @@ const scissorsBtn = document.getElementById('scissors-btn');
 const scores = document.querySelector(".scores");
 let score = document.querySelector(".score")
 const result = document.querySelector(".result");
-const infoAboutRepeat = document.querySelector(".info-repeat")
+const playAgain = document.querySelector(".play-again")
 
 rockBtn.addEventListener("click", function(e) {
     rockBtn.classList.add("chosen");
@@ -32,6 +32,7 @@ scissorsBtn.addEventListener("click",  function(e) {
     
 });
 
+
 let gamesPlayed = 0
 let totalScore = 0
 
@@ -43,17 +44,6 @@ function game() {
     else if (gamesPlayed === 5){
         singleRound();
         gameScore();
-    }
-    else {
-        gamesPlayed = 0;
-        for (let i = 0; i < 5; i++) {
-            scores.firstElementChild.remove();
-        }
-        result.innerText = "";
-        infoAboutRepeat.innerText = "";
-        rockBtn.classList.toggle("chosen", false);
-        paperBtn.classList.toggle("chosen", false);
-        scissorsBtn.classList.toggle("chosen", false);
     }
 }
 
@@ -175,7 +165,29 @@ function playerSelection() {
     else if (totalScore < 0) {
         result.innerText = "You've LOST";
     }
-    infoAboutRepeat.innerText = "Click on rock, paper or scissors button if you would like to play again."
+    let playAgainBtn = document.createElement("button");
+    playAgainBtn.innerText ="Play Again"
+    playAgain.prepend(playAgainBtn);
+    rockBtn.setAttribute("disabled", "");
+    paperBtn.setAttribute("disabled", "");
+    scissorsBtn.setAttribute("disabled", "");
+
+    playAgainBtn.addEventListener("click", function(e) {
+        gamesPlayed = 0;
+        for (let i = 0; i < 5; i++) {
+            scores.firstElementChild.remove();
+        }
+        result.innerText = "";
+        rockBtn.classList.toggle("chosen", false);
+        paperBtn.classList.toggle("chosen", false);
+        scissorsBtn.classList.toggle("chosen", false);
+        rockBtn.removeAttribute("disabled", "");
+        paperBtn.removeAttribute("disabled", "");
+        scissorsBtn.removeAttribute("disabled", "");
+        playAgain.firstElementChild.remove();
+
+});
+
   }
 
     
