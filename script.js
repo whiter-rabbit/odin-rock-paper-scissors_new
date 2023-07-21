@@ -2,31 +2,27 @@ const rockBtn = document.getElementById('rock-btn');
 const paperBtn = document.getElementById('paper-btn');
 const scissorsBtn = document.getElementById('scissors-btn');
 
+
 const scores = document.querySelector(".scores");
-let score = document.querySelector(".score")
+let score = document.querySelector(".score");
+const buttons = document.querySelector(".buttons")
 const result = document.querySelector(".result");
 const playAgain = document.querySelector(".play-again")
 
 rockBtn.addEventListener("click", function(e) {
     rockBtn.classList.add("chosen");
-    paperBtn.classList.toggle("chosen", false);
-    scissorsBtn.classList.toggle("chosen", false);
     gamesPlayed++;
     game();
     
 });
 paperBtn.addEventListener("click", function(e) {
     paperBtn.classList.add("chosen");
-    rockBtn.classList.toggle("chosen", false);
-    scissorsBtn.classList.toggle("chosen", false);
     gamesPlayed++;
     game();
     
 });
 scissorsBtn.addEventListener("click",  function(e) {
     scissorsBtn.classList.add("chosen");
-    rockBtn.classList.toggle("chosen", false);
-    paperBtn.classList.toggle("chosen", false);
     gamesPlayed++;
     game();
     
@@ -58,72 +54,98 @@ function singleRound() {
         if (a === "rock" && b === "rock") {
             scores.prepend(score);
             score.innerText ="Tie! Rock vs Rock";
-            rockBtn.classList.toggle("chosen", false);
+            setTimeout(() => {
+                rockBtn.classList.remove("chosen")
+              }, "250");
             totalScore = totalScore + 0;
-            return totalScore;
+            
         }
         else if (a === "rock" && b === "paper") {
             scores.prepend(score);
             score.innerText = "You Lose! Rock loses against Paper";
-            rockBtn.classList.toggle("chosen", false);
+            let changeBack;
+            setTimeout(() => {
+                rockBtn.classList.remove("chosen")
+              }, "250");
             totalScore = totalScore - 1;
-            return totalScore;
+            
         }
         else if (a === "rock" && b === "scissors") {
             scores.prepend(score);
             score.innerText = "You Win! Rock beats Scissors";
-            rockBtn.classList.toggle("chosen", false);
+            setTimeout(() => {
+                rockBtn.classList.remove("chosen")
+              }, "250");
             totalScore = totalScore + 1;
-            return totalScore;
+            
         }
         else if (a === "paper" && b === "rock") {
             scores.prepend(score);
             score.innerText = "You Win! Paper beats Rock";
-            paperBtn.classList.toggle("chosen", false);
+            setTimeout(() => {
+                paperBtn.classList.remove("chosen")
+              }, "250");
             totalScore = totalScore + 1;
-            return totalScore;
+            
         }
         else if (a === "paper" && b === "paper") {
             scores.prepend(score);
             score.innerText = "Tie! Paper vs Paper";
-            paperBtn.classList.toggle("chosen", false);
+            setTimeout(() => {
+                paperBtn.classList.remove("chosen")
+              }, "250");
             totalScore = totalScore + 0;
-            return totalScore;
+            
         }
         else if (a === "paper" && b === "scissors") {
             scores.prepend(score);
             score.innerText = "You Lose! Paper loses against Scissors";
-            paperBtn.classList.toggle("chosen", false);
+            setTimeout(() => {
+                paperBtn.classList.remove("chosen")
+              }, "250");
             totalScore = totalScore - 1;
-            return totalScore;
+            
         }
         else if (a === "scissors" && b === "rock") {
             scores.prepend(score);
             score.innerText = "You Lose! Scissors lose against Rock";
-            scissorsBtn.classList.toggle("chosen", false);
+            setTimeout(() => {
+                scissorsBtn.classList.remove("chosen")
+              }, "250");
             totalScore = totalScore - 1;
-            return totalScore;
+            
         }
         else if (a === "scissors" && b === "paper") {
             scores.prepend(score);
             score.innerText = "You Win! Scissors beats Paper";
-            scissorsBtn.classList.toggle("chosen", false);
+            setTimeout(() => {
+                scissorsBtn.classList.remove("chosen")
+              }, "250");
             totalScore = totalScore + 1;
-            return totalScore;
+            
         }
         else if (a === "scissors" && b === "scissors") {
             scores.prepend(score);
             score.innerText = "Tie! Scissors vs Scissors";
-            scissorsBtn.classList.toggle("chosen", false);
+            setTimeout(() => {
+                scissorsBtn.classList.remove("chosen")
+              }, "250");
             totalScore = totalScore + 0;
-            return totalScore;
+            
         }
 }
 
 
 
 function getComputerChoice() {
+    /* //INFO -  below adding additional button with computer's choice - PARTIALLY DONE
+    //(new one appears after each click, no text yet, first one appears in-line with 3 basic buttons)
+    const computersBtn = document.createElement("div");
+    computersBtn.classList.add("computers-btn");
+    buttons.appendChild(computersBtn);
+    */
     computerNumber = (Math.floor(Math.random() * 3)) + 1;
+    
     if (computerNumber === 1) {
         computerChoice = "rock";
     }
@@ -166,7 +188,8 @@ function playerSelection() {
         result.innerText = "You've LOST";
     }
     let playAgainBtn = document.createElement("button");
-    playAgainBtn.innerText ="PLAY AGAIN"
+    playAgainBtn.innerText ="PLAY AGAIN";
+    //playAgainBtn.classList.add("chosen");
     playAgain.prepend(playAgainBtn);
     rockBtn.setAttribute("disabled", "");
     paperBtn.setAttribute("disabled", "");
@@ -178,13 +201,14 @@ function playerSelection() {
             scores.firstElementChild.remove();
         }
         result.innerText = "";
-        rockBtn.classList.toggle("chosen", false);
-        paperBtn.classList.toggle("chosen", false);
-        scissorsBtn.classList.toggle("chosen", false);
         rockBtn.removeAttribute("disabled", "");
         paperBtn.removeAttribute("disabled", "");
         scissorsBtn.removeAttribute("disabled", "");
+        // setTimeout(() => {
+        //     playAgainBtn.classList.remove("chosen")
+        //   }, "250");
         playAgain.firstElementChild.remove();
+        totalScore = 0;
 
 });
 
