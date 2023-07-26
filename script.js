@@ -188,7 +188,7 @@ function playerSelection() {
         result.innerText = "You've LOST";
     }
     let playAgainBtn = document.createElement("button");
-    playAgainBtn.innerText ="PLAY AGAIN";
+    playAgainBtn.innerText ="play again";
     //playAgainBtn.classList.add("chosen");
     playAgain.prepend(playAgainBtn);
     rockBtn.setAttribute("disabled", "");
