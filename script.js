@@ -56,6 +56,10 @@ function singleRound() {
         if (a === "rock" && b === "rock") {
             scores.prepend(score);
             score.innerText ="Tie! Rock vs Rock";
+            score.classList.add("orange-text");
+            setTimeout(() => {
+                score.classList.remove("orange-text")
+              }, "150");
             setTimeout(() => {
                 rockBtn.classList.remove("chosen")
               }, "250");
@@ -65,6 +69,10 @@ function singleRound() {
         else if (a === "rock" && b === "paper") {
             scores.prepend(score);
             score.innerText = "You Lose! Rock loses against Paper";
+            score.classList.add("orange-text");
+            setTimeout(() => {
+                score.classList.remove("orange-text")
+              }, "150");
             setTimeout(() => {
                 rockBtn.classList.remove("chosen")
               }, "250");
@@ -74,6 +82,10 @@ function singleRound() {
         else if (a === "rock" && b === "scissors") {
             scores.prepend(score);
             score.innerText = "You Win! Rock beats Scissors";
+            score.classList.add("orange-text");
+            setTimeout(() => {
+                score.classList.remove("orange-text")
+              }, "150");
             setTimeout(() => {
                 rockBtn.classList.remove("chosen")
               }, "250");
@@ -83,6 +95,10 @@ function singleRound() {
         else if (a === "paper" && b === "rock") {
             scores.prepend(score);
             score.innerText = "You Win! Paper beats Rock";
+            score.classList.add("orange-text");
+            setTimeout(() => {
+                score.classList.remove("orange-text")
+              }, "150");
             setTimeout(() => {
                 paperBtn.classList.remove("chosen")
               }, "250");
@@ -92,6 +108,10 @@ function singleRound() {
         else if (a === "paper" && b === "paper") {
             scores.prepend(score);
             score.innerText = "Tie! Paper vs Paper";
+            score.classList.add("orange-text");
+            setTimeout(() => {
+                score.classList.remove("orange-text")
+              }, "150");
             setTimeout(() => {
                 paperBtn.classList.remove("chosen")
               }, "250");
@@ -101,6 +121,10 @@ function singleRound() {
         else if (a === "paper" && b === "scissors") {
             scores.prepend(score);
             score.innerText = "You Lose! Paper loses against Scissors";
+            score.classList.add("orange-text");
+            setTimeout(() => {
+                score.classList.remove("orange-text")
+              }, "150");
             setTimeout(() => {
                 paperBtn.classList.remove("chosen")
               }, "250");
@@ -110,6 +134,10 @@ function singleRound() {
         else if (a === "scissors" && b === "rock") {
             scores.prepend(score);
             score.innerText = "You Lose! Scissors lose against Rock";
+            score.classList.add("orange-text");
+            setTimeout(() => {
+                score.classList.remove("orange-text")
+              }, "150");
             setTimeout(() => {
                 scissorsBtn.classList.remove("chosen")
               }, "250");
@@ -119,6 +147,10 @@ function singleRound() {
         else if (a === "scissors" && b === "paper") {
             scores.prepend(score);
             score.innerText = "You Win! Scissors beats Paper";
+            score.classList.add("orange-text");
+            setTimeout(() => {
+                score.classList.remove("orange-text")
+              }, "150");
             setTimeout(() => {
                 scissorsBtn.classList.remove("chosen")
               }, "250");
@@ -128,6 +160,10 @@ function singleRound() {
         else if (a === "scissors" && b === "scissors") {
             scores.prepend(score);
             score.innerText = "Tie! Scissors vs Scissors";
+            score.classList.add("orange-text");
+            setTimeout(() => {
+                score.classList.remove("orange-text")
+              }, "150");
             setTimeout(() => {
                 scissorsBtn.classList.remove("chosen")
               }, "250");
@@ -152,24 +188,23 @@ function getComputerChoice() {
     if (computerNumber === 1) {
         computerChoice = "rock";
         computersBtn.innerText = "rock";
-        buttons2.classList.add("left-btn");
-
     }
     else if (computerNumber === 2) {
         computerChoice = "paper";
         computersBtn.innerText = "paper";
+        buttons2.classList.add("center-btn");
     }
-    else {
-        computerChoice = "scissors"
+    else if (computerNumber === 3) {
+        computerChoice = "scissors";
         computersBtn.innerText = "scissors";
         buttons2.classList.add("right-btn");
     }
     setTimeout(() => {
         computersBtn.classList.remove("chosen")
       }, "350");
-    // setTimeout(() => {
-    //   computersBtn.setAttribute("disabled", "");
-    //     }, "500");
+    setTimeout(() => {
+        computersBtn.setAttribute("disabled", "")
+        }, "500");
 
     setTimeout(() => {
         computersBtn.remove()

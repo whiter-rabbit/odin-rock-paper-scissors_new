@@ -11,7 +11,6 @@ body {
     background-blend-mode:soft-light;
     */
     background-blend-mode:multiply;
-
     display: flex;
     flex-direction: column; 
     height: 100vh;
@@ -37,7 +36,6 @@ body {
     background-color: rgba(240, 229, 132, 0.9);
     border-radius: 30px;
     box-shadow: 16px 16px rgb(55, 68, 71);
-    flex: 1;
 }
 
 .info {
@@ -63,22 +61,41 @@ body {
     background-color:rgba(245, 248, 247, 0.3);
     border-radius: 100px 100px 30px 30px;
     padding-top: 80px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
+    text-align: center;
 }
 
 .score {
     font-size: 22px;
     padding: 0px -5px 50px -5px;
     color: rgba(70, 97, 105, 1);
-    padding-left: 20px;
-    text-align: center;
+    padding: 0 20px 0 20px;
+    
 }
+
+.orange-text {
+    transform: scale(1.1);
+    transition-timing-function: ease-in-out;
+    color: rgb(214, 94, 64);
+}
+
+
+/* .result {
+    text-align: center;
+    color: rgb(214, 94, 64);
+    font-size: 30px;
+} */
 
 .result {
     text-align: center;
     color: rgb(214, 94, 64);
     font-size: 30px;
+    background-color: rgba(240, 229, 132, 0.9);
+    box-shadow: 16px 16px rgb(55, 68, 71);
+    font-family: 'Irish Grover', cursive;
+    padding: 30px 0 30px 0;
 }
+
 
 .play-again {
     text-align: center;
@@ -100,23 +117,26 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    flex: 1.3;
 }
 
 .buttons {
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content:space-evenly;
     align-items: center;
-    gap: 20px; 
+    height: 100px;
+    width: 485px;
     /*
     background-color: rgba(137, 164, 175, 0.95);
+     gap: 20px; 
+     justify-content:center;
     */
     background-color: rgba(240, 229, 132, 0.9);
-    border-radius: 30px;
+    border-radius: 30px 30px 0 0;
     padding: 45px 0;
     box-shadow: 16px 16px rgb(55, 68, 71);
 }
+
 
 .buttons button {
     width: 120px;
@@ -129,20 +149,47 @@ body {
     transition: all 0.1s ease-out;
     font-family: 'Irish Grover', cursive;
     font-size: 24px;
-    
+}
+
+button:disabled {
+    background-color: rgb(150, 149, 149);
+    color: rgb(206, 204, 204);
+
 }
 
 .buttons2 {
     display: flex;
     justify-content:center;
     align-items: center;
+    width: 170px;
+    height: 100px;
     background-color: rgba(240, 229, 132, 0.9);
-    border-radius: 30px;
+    border-radius: 0 0 30px 30px;
     padding: 45px 0;
     box-shadow: 16px 16px rgb(55, 68, 71);
 }
 
-.left-btn {
+
+.center-btn {
+    margin-left: 160px;
+}
+
+.right-btn {
+    margin-left: 320px;
+} 
+
+/* .buttons2 {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: rgba(240, 229, 132, 0.9);
+    border-radius: 0 0 30px 30px;
+    padding: 45px 0;
+    box-shadow: 16px 16px rgb(55, 68, 71);
+} */
+
+
+/* .left-btn {
     justify-content:flex-start;
     padding-left: 55px;
 }
@@ -151,7 +198,7 @@ body {
 .right-btn {
     justify-content:flex-end;
     padding-right: 55px;
-}
+} */
 
 .computers-btn {
     width: 120px;
@@ -160,17 +207,12 @@ body {
     border: 10px outset rgb(179, 179, 179);
     box-shadow: 8px 8px rgb(55, 68, 71);
     background-color: rgb(134, 63, 58);
-    color: rgb(179, 179, 179);
+    color: rgb(224, 191, 191);
     transition: all 0.1s ease-out;
     font-family: 'Irish Grover', cursive;
     font-size: 24px;
      
 }
-
-
-/* button:disabled, computers-btn {
-    background-color: gray;
-} */
 
 
 .chosen{
