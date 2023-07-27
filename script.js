@@ -7,12 +7,14 @@ const scores = document.querySelector(".scores");
 let score = document.querySelector(".score");
 const buttons = document.querySelector(".buttons")
 const result = document.querySelector(".result");
-const playAgain = document.querySelector(".play-again")
+const playAgain = document.querySelector(".play-again");
+const allButtons = document.querySelector(".all-buttons");
 
 rockBtn.addEventListener("click", function(e) {
     rockBtn.classList.add("chosen");
     gamesPlayed++;
     game();
+    
     
 });
 paperBtn.addEventListener("click", function(e) {
@@ -63,7 +65,6 @@ function singleRound() {
         else if (a === "rock" && b === "paper") {
             scores.prepend(score);
             score.innerText = "You Lose! Rock loses against Paper";
-            let changeBack;
             setTimeout(() => {
                 rockBtn.classList.remove("chosen")
               }, "250");
@@ -133,28 +134,50 @@ function singleRound() {
             totalScore = totalScore + 0;
             
         }
+
 }
 
 
-
 function getComputerChoice() {
-    /* //INFO -  below adding additional button with computer's choice - PARTIALLY DONE
-    //(new one appears after each click, no text yet, first one appears in-line with 3 basic buttons)
-    const computersBtn = document.createElement("div");
+    const buttons2 = document.createElement("div");
+    buttons2.classList.add("buttons2");
+    allButtons.appendChild(buttons2);
+    const computersBtn = document.createElement("button");
     computersBtn.classList.add("computers-btn");
-    buttons.appendChild(computersBtn);
-    */
+    computersBtn.classList.add("chosen");
+    buttons2.append(computersBtn);
+    
     computerNumber = (Math.floor(Math.random() * 3)) + 1;
     
     if (computerNumber === 1) {
         computerChoice = "rock";
+        computersBtn.innerText = "rock";
+        buttons2.classList.add("left-btn");
+
     }
     else if (computerNumber === 2) {
-        computerChoice = "paper"
+        computerChoice = "paper";
+        computersBtn.innerText = "paper";
     }
     else {
         computerChoice = "scissors"
+        computersBtn.innerText = "scissors";
+        buttons2.classList.add("right-btn");
     }
+    setTimeout(() => {
+        computersBtn.classList.remove("chosen")
+      }, "350");
+    // setTimeout(() => {
+    //   computersBtn.setAttribute("disabled", "");
+    //     }, "500");
+
+    setTimeout(() => {
+        computersBtn.remove()
+        }, "500");
+    setTimeout(() => {
+        buttons2.remove()
+        }, "500");
+
     return computerChoice;
 }
 
@@ -189,7 +212,6 @@ function playerSelection() {
     }
     let playAgainBtn = document.createElement("button");
     playAgainBtn.innerText ="play again";
-    //playAgainBtn.classList.add("chosen");
     playAgain.prepend(playAgainBtn);
     rockBtn.setAttribute("disabled", "");
     paperBtn.setAttribute("disabled", "");
@@ -204,9 +226,6 @@ function playerSelection() {
         rockBtn.removeAttribute("disabled", "");
         paperBtn.removeAttribute("disabled", "");
         scissorsBtn.removeAttribute("disabled", "");
-        // setTimeout(() => {
-        //     playAgainBtn.classList.remove("chosen")
-        //   }, "250");
         playAgain.firstElementChild.remove();
         totalScore = 0;
 
