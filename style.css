@@ -3,24 +3,17 @@ body {
     background-image: url('img/background2.jpg'), url('img/polystyrene1.jpg');
     background-size: 100vw;
     background-position: top center;
-    /*
-    background-blend-mode:hard-light;
-    background-blend-mode:multiply;
-    background-blend-mode:overlay;
-    background-blend-mode:screen;
-    background-blend-mode:soft-light;
-    */
     background-blend-mode:multiply;
     display: flex;
     flex-direction: column; 
-    height: 100vh;
+    max-height: 100%;
     
 }
     
 
 .main {
     max-width: 1000px;
-    margin: 150px auto;
+    margin: 150px auto 0 auto;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     align-items: flex-start;
@@ -30,9 +23,6 @@ body {
 
 
 .description {
-    /*
-    background-color: rgba(202, 92, 64, 0.95);
-    */
     background-color: rgba(240, 229, 132, 0.9);
     border-radius: 30px;
     box-shadow: 16px 16px rgb(55, 68, 71);
@@ -40,9 +30,6 @@ body {
 
 .info {
     padding: 0px 35px;
-    /*
-    color:rgb(241, 195, 183);
-    */
     color: #794451;
     font-size: 22px;
     font-style:italic;
@@ -80,28 +67,23 @@ body {
 }
 
 
-/* .result {
-    text-align: center;
-    color: rgb(214, 94, 64);
-    font-size: 30px;
-} */
-
 .result {
     text-align: center;
     color: rgb(214, 94, 64);
     font-size: 30px;
-    background-color: rgba(240, 229, 132, 0.9);
-    box-shadow: 16px 16px rgb(55, 68, 71);
     font-family: 'Irish Grover', cursive;
+}
+
+
+.result-parent {
+    text-align: center;
+    background-color: rgba(240, 229, 132, 0.9);
+    border-radius: 0 0 30px 30px;
+    box-shadow: 16px 16px rgb(55, 68, 71);
     padding: 30px 0 30px 0;
 }
 
-
-.play-again {
-    text-align: center;
-}
-
-.play-again button {
+button.play-again {
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -126,11 +108,6 @@ body {
     align-items: center;
     height: 100px;
     width: 485px;
-    /*
-    background-color: rgba(137, 164, 175, 0.95);
-     gap: 20px; 
-     justify-content:center;
-    */
     background-color: rgba(240, 229, 132, 0.9);
     border-radius: 30px 30px 0 0;
     padding: 45px 0;
@@ -211,43 +188,25 @@ button:disabled {
     transition: all 0.1s ease-out;
     font-family: 'Irish Grover', cursive;
     font-size: 24px;
-     
 }
-
 
 .chosen{
     transform: scale(1.1);
-    
 }
 
 .text-below {
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     max-width: 1000px;
-    /*
-    margin-top: -300px;
-    */
-    padding: 120px;
-
+    margin: 150px auto 0 auto;
 }
 
 
-.game-name {
+h1.game-name {
     color:#8299a0ef;
     text-shadow: 10px 10px rgb(55, 68, 71, 0.8);
-    /*
-    font-family: 'Abril Fatface', cursive;
-    color: rgba(145, 177, 194, 0.75);
-    color:rgb(252, 242, 236);
-    color:#722d2daa;
-    text-shadow: 10px 10px rgb(252, 237, 237);
-   */
-   font-family: 'Irish Grover', cursive;
-   font-size: 255px;
-   line-height: 200px;
-   z-index: -1;
+    font-family: 'Irish Grover', cursive;
+    font-size: 255px;
+    line-height: 200px;
+    /* z-index: -1; */
     
 }
 

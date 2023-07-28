@@ -6,12 +6,12 @@ const scissorsBtn = document.getElementById('scissors-btn');
 const scores = document.querySelector(".scores");
 let score = document.querySelector(".score");
 const buttons = document.querySelector(".buttons")
-const result = document.querySelector(".result");
-const playAgain = document.querySelector(".play-again");
+const resultGrandparent = document.querySelector(".result-grandparent");
 const allButtons = document.querySelector(".all-buttons");
 
 rockBtn.addEventListener("click", function(e) {
     rockBtn.classList.add("chosen");
+    //score.classList.toggle("orange-text", false);
     gamesPlayed++;
     game();
     
@@ -19,12 +19,14 @@ rockBtn.addEventListener("click", function(e) {
 });
 paperBtn.addEventListener("click", function(e) {
     paperBtn.classList.add("chosen");
+    //score.classList.toggle("orange-text", false);
     gamesPlayed++;
     game();
     
 });
 scissorsBtn.addEventListener("click",  function(e) {
     scissorsBtn.classList.add("chosen");
+    //score.classList.toggle("orange-text", false);
     gamesPlayed++;
     game();
     
@@ -51,7 +53,10 @@ function singleRound() {
     let b = getComputerChoice();
 
     score = document.createElement('p');
-    score.classList.add("score")
+    score.classList.add("score");
+    
+    //score.classList.remove("orange-text");
+    score.classList.toggle("orange-text", false)
     
         if (a === "rock" && b === "rock") {
             scores.prepend(score);
@@ -59,7 +64,7 @@ function singleRound() {
             score.classList.add("orange-text");
             setTimeout(() => {
                 score.classList.remove("orange-text")
-              }, "150");
+              }, "125");
             setTimeout(() => {
                 rockBtn.classList.remove("chosen")
               }, "250");
@@ -72,7 +77,7 @@ function singleRound() {
             score.classList.add("orange-text");
             setTimeout(() => {
                 score.classList.remove("orange-text")
-              }, "150");
+              }, "125");
             setTimeout(() => {
                 rockBtn.classList.remove("chosen")
               }, "250");
@@ -85,7 +90,7 @@ function singleRound() {
             score.classList.add("orange-text");
             setTimeout(() => {
                 score.classList.remove("orange-text")
-              }, "150");
+              }, "125");
             setTimeout(() => {
                 rockBtn.classList.remove("chosen")
               }, "250");
@@ -98,7 +103,7 @@ function singleRound() {
             score.classList.add("orange-text");
             setTimeout(() => {
                 score.classList.remove("orange-text")
-              }, "150");
+              }, "125");
             setTimeout(() => {
                 paperBtn.classList.remove("chosen")
               }, "250");
@@ -111,7 +116,7 @@ function singleRound() {
             score.classList.add("orange-text");
             setTimeout(() => {
                 score.classList.remove("orange-text")
-              }, "150");
+              }, "125");
             setTimeout(() => {
                 paperBtn.classList.remove("chosen")
               }, "250");
@@ -124,7 +129,7 @@ function singleRound() {
             score.classList.add("orange-text");
             setTimeout(() => {
                 score.classList.remove("orange-text")
-              }, "150");
+              }, "125");
             setTimeout(() => {
                 paperBtn.classList.remove("chosen")
               }, "250");
@@ -137,7 +142,7 @@ function singleRound() {
             score.classList.add("orange-text");
             setTimeout(() => {
                 score.classList.remove("orange-text")
-              }, "150");
+              }, "125");
             setTimeout(() => {
                 scissorsBtn.classList.remove("chosen")
               }, "250");
@@ -150,7 +155,7 @@ function singleRound() {
             score.classList.add("orange-text");
             setTimeout(() => {
                 score.classList.remove("orange-text")
-              }, "150");
+              }, "125");
             setTimeout(() => {
                 scissorsBtn.classList.remove("chosen")
               }, "250");
@@ -163,13 +168,14 @@ function singleRound() {
             score.classList.add("orange-text");
             setTimeout(() => {
                 score.classList.remove("orange-text")
-              }, "150");
+              }, "125");
             setTimeout(() => {
                 scissorsBtn.classList.remove("chosen")
               }, "250");
             totalScore = totalScore + 0;
             
         }
+
 
 }
 
@@ -232,7 +238,12 @@ function playerSelection() {
 
   function gameScore () {
 
-    console.log(totalScore);
+    //console.log(totalScore);
+    const resultParent = document.createElement("div");
+    resultParent.classList.add("result-parent");
+    const result = document.createElement("div");
+    result.classList.add("result");
+    const playAgainBtn = document.createElement("button");
 
     if (totalScore > 0) {
         result.innerText = "You've WON";
@@ -245,24 +256,35 @@ function playerSelection() {
     else if (totalScore < 0) {
         result.innerText = "You've LOST";
     }
-    let playAgainBtn = document.createElement("button");
-    playAgainBtn.innerText ="play again";
-    playAgain.prepend(playAgainBtn);
-    rockBtn.setAttribute("disabled", "");
-    paperBtn.setAttribute("disabled", "");
-    scissorsBtn.setAttribute("disabled", "");
+
+
+      setTimeout(() => {
+        resultGrandparent.append(resultParent);
+        resultParent.append(result);
+        
+        playAgainBtn.innerText ="play again";
+        playAgainBtn.classList.add("play-again")
+        resultParent.appendChild(playAgainBtn);
+        rockBtn.setAttribute("disabled", "");
+        paperBtn.setAttribute("disabled", "");
+        scissorsBtn.setAttribute("disabled", "");
+      }, "1000");
+      
+
 
     playAgainBtn.addEventListener("click", function(e) {
         gamesPlayed = 0;
         for (let i = 0; i < 5; i++) {
             scores.firstElementChild.remove();
         }
-        result.innerText = "";
-        rockBtn.removeAttribute("disabled", "");
-        paperBtn.removeAttribute("disabled", "");
-        scissorsBtn.removeAttribute("disabled", "");
-        playAgain.firstElementChild.remove();
-        totalScore = 0;
+      result.innerText = "";
+      rockBtn.removeAttribute("disabled", "");
+      paperBtn.removeAttribute("disabled", "");
+      scissorsBtn.removeAttribute("disabled", "");
+      playAgainBtn.remove();
+      result.remove();
+      resultParent.remove();
+      totalScore = 0;
 
 });
 
