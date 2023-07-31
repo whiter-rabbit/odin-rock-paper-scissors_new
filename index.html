@@ -1,13 +1,38 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href=style.css>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Irish+Grover&display=swap" rel="stylesheet">
     <title>Rock-Paper-Scissors</title>
 </head>
 <body>
-    <h1>Play Rock-Paper-Scissors Game</h1>
-    <script src="script.js"></script>
+    <div class="main">
+        <div class="description">
+            <p class="info info1">Play 5 rounds of the game: <br><span class="name">rock - paper - scissors,</span><br>to find out if you can win with the computer.</p>
+            <p class="info">Choose your weapon by pressing a button.</p>
+            <div class ="after-playing">
+                <div class="scores"></div>
+                <div class="play-again"></div>
+            </div>
+        </div>
+        <div class="all-buttons">
+            <div class ="buttons">
+                <button id="rock-btn" class= "button" >rock</button>
+                <button id ="paper-btn" class= "button" >paper</button>
+                <button id ="scissors-btn" class= "button" >scissors</button>
+            </div>
+            <div class="result-grandparent"></div>
+        </div>
+    </div>
+    <div class="text-below">
+        <h1 class="game-name">rock<br>paper<br>scissors</h1>
+    </div>
 </body>
 </html>

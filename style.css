@@ -1,0 +1,218 @@
+body {
+    margin: 0 auto;
+    background-image: url('img/background2.jpg'), url('img/polystyrene1.jpg');
+    background-size: 100vw;
+    background-position: top center;
+    background-blend-mode:multiply;
+    display: flex;
+    flex-direction: column; 
+    max-height: 100%;
+    
+}
+    
+
+.main {
+    max-width: 1000px;
+    margin: 150px auto 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row; 
+    gap: 30px;
+}
+
+
+.description {
+    background-color: rgba(240, 229, 132, 0.9);
+    border-radius: 30px;
+    box-shadow: 16px 16px rgb(55, 68, 71);
+}
+
+.info {
+    padding: 0px 35px;
+    color: #794451;
+    font-size: 22px;
+    font-style:italic;
+}
+
+.info1 {
+    padding-top: 50px;
+}
+
+.name {
+    font-family: 'Irish Grover', cursive;
+    font-size: 32px;
+}
+
+.scores {
+    background-color:rgba(245, 248, 247, 0.3);
+    border-radius: 100px 100px 30px 30px;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.score {
+    font-size: 22px;
+    padding: 0px -5px 50px -5px;
+    color: rgba(70, 97, 105, 1);
+    padding: 0 20px 0 20px;
+    
+}
+
+.orange-text {
+    transform: scale(1.1);
+    transition-timing-function: ease-in-out;
+    color: rgb(214, 94, 64);
+}
+
+
+.result {
+    text-align: center;
+    color: rgb(214, 94, 64);
+    font-size: 30px;
+    font-family: 'Irish Grover', cursive;
+}
+
+
+.result-parent {
+    text-align: center;
+    background-color: rgba(240, 229, 132, 0.9);
+    border-radius: 0 0 30px 30px;
+    box-shadow: 16px 16px rgb(55, 68, 71);
+    padding: 40px 0 40px 0;
+}
+
+button.play-again {
+    width: 240px;
+    height: 120px;
+    border-radius: 120px 120px 120px 120px;
+    border: 10px outset rgb(179, 179, 179);
+    box-shadow: 8px 8px rgb(55, 68, 71); ;
+    font-family: 'Irish Grover', cursive;
+    font-size: 24px;
+    color:  rgb(209, 208, 208);
+    background-color: rgb(214, 94, 64);
+    margin-top: 20px;
+}
+
+
+.all-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items: center;
+    height: 100px;
+    width: 485px;
+    background-color: rgba(240, 229, 132, 0.9);
+    border-radius: 30px 30px 0 0;
+    padding: 45px 0;
+    box-shadow: 16px 16px rgb(55, 68, 71);
+}
+
+
+.buttons button {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 10px outset rgb(179, 179, 179);
+    box-shadow: 8px 8px rgb(55, 68, 71);
+    background-color: #8db1bb;
+    color: rgb(252, 252, 252);
+    transition: all 0.1s ease-out;
+    font-family: 'Irish Grover', cursive;
+    font-size: 24px;
+}
+
+button:disabled {
+    background-color: rgb(150, 149, 149);
+    color: rgb(206, 204, 204);
+
+}
+
+.buttons2 {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 170px;
+    height: 100px;
+    background-color: rgba(240, 229, 132, 0.9);
+    border-radius: 0 0 30px 30px;
+    padding: 45px 0;
+    box-shadow: 16px 16px rgb(55, 68, 71);
+}
+
+
+.center-btn {
+    margin-left: 160px;
+}
+
+.right-btn {
+    margin-left: 320px;
+} 
+
+/* .buttons2 {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: rgba(240, 229, 132, 0.9);
+    border-radius: 0 0 30px 30px;
+    padding: 45px 0;
+    box-shadow: 16px 16px rgb(55, 68, 71);
+} */
+
+
+/* .left-btn {
+    justify-content:flex-start;
+    padding-left: 55px;
+}
+
+
+.right-btn {
+    justify-content:flex-end;
+    padding-right: 55px;
+} */
+
+.computers-btn {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 10px outset rgb(179, 179, 179);
+    box-shadow: 8px 8px rgb(55, 68, 71);
+    background-color: rgb(134, 63, 58);
+    color: rgb(224, 191, 191);
+    transition: all 0.1s ease-out;
+    font-family: 'Irish Grover', cursive;
+    font-size: 24px;
+}
+
+.chosen{
+    transform: scale(1.1);
+}
+
+.text-below {
+    max-width: 1000px;
+    margin-top: -100px;
+}
+
+
+h1.game-name {
+    color:#8299a0ef;
+    text-shadow: 10px 10px rgb(55, 68, 71, 0.8);
+    font-family: 'Irish Grover', cursive;
+    font-size: 255px;
+    line-height: 200px;
+    /* z-index: -1; */
+    
+}
+
+
+
+
+
