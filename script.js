@@ -11,7 +11,6 @@ const allButtons = document.querySelector(".all-buttons");
 
 rockBtn.addEventListener("click", function(e) {
     rockBtn.classList.add("chosen");
-    //score.classList.toggle("orange-text", false);
     gamesPlayed++;
     game();
     
@@ -19,14 +18,12 @@ rockBtn.addEventListener("click", function(e) {
 });
 paperBtn.addEventListener("click", function(e) {
     paperBtn.classList.add("chosen");
-    //score.classList.toggle("orange-text", false);
     gamesPlayed++;
     game();
     
 });
 scissorsBtn.addEventListener("click",  function(e) {
     scissorsBtn.classList.add("chosen");
-    //score.classList.toggle("orange-text", false);
     gamesPlayed++;
     game();
     
@@ -54,8 +51,6 @@ function singleRound() {
 
     score = document.createElement('p');
     score.classList.add("score");
-    
-    //score.classList.remove("orange-text");
     score.classList.toggle("orange-text", false)
     
         if (a === "rock" && b === "rock") {
@@ -176,9 +171,7 @@ function singleRound() {
             
         }
 
-
 }
-
 
 function getComputerChoice() {
     const buttons2 = document.createElement("div");
@@ -237,8 +230,6 @@ function playerSelection() {
 
 
   function gameScore () {
-
-    //console.log(totalScore);
     const resultParent = document.createElement("div");
     resultParent.classList.add("result-parent");
     const result = document.createElement("div");

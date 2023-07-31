@@ -80,20 +80,22 @@ body {
     background-color: rgba(240, 229, 132, 0.9);
     border-radius: 0 0 30px 30px;
     box-shadow: 16px 16px rgb(55, 68, 71);
-    padding: 30px 0 30px 0;
+    padding: 40px 0 40px 0;
 }
 
 button.play-again {
-    width: 120px;
+    width: 240px;
     height: 120px;
-    border-radius: 50%;
+    border-radius: 120px 120px 120px 120px;
     border: 10px outset rgb(179, 179, 179);
     box-shadow: 8px 8px rgb(55, 68, 71); ;
     font-family: 'Irish Grover', cursive;
     font-size: 24px;
-    color:  rgb(179, 179, 179);
+    color:  rgb(209, 208, 208);
     background-color: rgb(214, 94, 64);
+    margin-top: 20px;
 }
+
 
 .all-buttons {
     display: flex;
@@ -196,7 +198,7 @@ button:disabled {
 
 .text-below {
     max-width: 1000px;
-    margin: 150px auto 0 auto;
+    margin-top: -100px;
 }
 
 
