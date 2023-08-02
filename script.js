@@ -187,6 +187,7 @@ function getComputerChoice() {
     if (computerNumber === 1) {
         computerChoice = "rock";
         computersBtn.innerText = "rock";
+        buttons2.classList.add("left-btn");
     }
     else if (computerNumber === 2) {
         computerChoice = "paper";

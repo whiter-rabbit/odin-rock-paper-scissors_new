@@ -4,21 +4,49 @@ body {
     background-size: 100vw;
     background-position: top center;
     background-blend-mode:multiply;
+    max-height: 100%;
+
     display: flex;
     flex-direction: column; 
-    max-height: 100%;
-    
+    align-items: center ;
+    justify-content: flex-start;
 }
-    
+
+@media screen and (max-width:1000px){
+    body{
+        background-size: 100vh;
+    }
+}
+
 
 .main {
     max-width: 1000px;
-    margin: 150px auto 0 auto;
+    margin: 100px auto 0;
     font-family: Arial, Helvetica, sans-serif;
+
     display: flex;
-    align-items: flex-start;
     flex-direction: row; 
+    align-items: flex-start;
+    justify-content: center;
     gap: 30px;
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    .main {
+        max-width: 1000px;
+        margin: 15px 15px;
+
+        gap: 20px;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .main {
+        max-width: 600px;
+        margin: 10px 10px;
+
+        gap: 15px;
+    }
 }
 
 
@@ -26,7 +54,22 @@ body {
     background-color: rgba(240, 229, 132, 0.9);
     border-radius: 30px;
     box-shadow: 16px 16px rgb(55, 68, 71);
+
+    flex:1;
 }
+
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    .description  {
+        border-radius: 20px;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .description  {
+        border-radius: 15px;
+    }
+}
+
 
 .info {
     padding: 0px 35px;
@@ -35,14 +78,58 @@ body {
     font-style:italic;
 }
 
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    .info  {
+        padding: 0px 15px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .info {
+        padding: 0px 15px;
+        font-size: 16px;
+    }
+}
+
+
 .info1 {
     padding-top: 50px;
 }
+
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    .info1  {
+        padding-top: 30px;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .info1 {
+        padding-top: 20px;
+       
+    }
+}
+
 
 .name {
     font-family: 'Irish Grover', cursive;
     font-size: 32px;
 }
+
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    .name  {
+        font-size: 26px
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .name {
+        font-size: 22px;
+        
+       
+    }
+}
+
 
 .scores {
     background-color:rgba(245, 248, 247, 0.3);
@@ -50,20 +137,75 @@ body {
     padding-top: 80px;
     padding-bottom: 30px;
     text-align: center;
+    
 }
+
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    .scores  {
+        border-radius: 50px 50px 20px 20px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .scores  {
+        border-radius: 30px 30px 15px 15px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+}
+
 
 .score {
     font-size: 22px;
     padding: 0px -5px 50px -5px;
     color: rgba(70, 97, 105, 1);
-    padding: 0 20px 0 20px;
-    
+    padding: 0 20px;
 }
+
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    .score  {
+        font-size: 18px;
+        padding: 0 15px;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .score  {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+}
+
 
 .orange-text {
     transform: scale(1.1);
     transition-timing-function: ease-in-out;
     color: rgb(214, 94, 64);
+}
+
+
+.result-parent {
+    text-align: center;
+    background-color: rgba(240, 229, 132, 0.9);
+    border-radius: 30px;
+    box-shadow: 16px 16px rgb(55, 68, 71);
+    padding: 40px 0;
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    .result-parent  {
+        padding: 15px 0;
+        border-radius: 20px;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .result-parent {
+        padding: 15px 0;
+        border-radius: 15px;
+    }
 }
 
 
@@ -74,19 +216,24 @@ body {
     font-family: 'Irish Grover', cursive;
 }
 
-
-.result-parent {
-    text-align: center;
-    background-color: rgba(240, 229, 132, 0.9);
-    border-radius: 0 0 30px 30px;
-    box-shadow: 16px 16px rgb(55, 68, 71);
-    padding: 40px 0 40px 0;
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    .result  {
+        border-radius: 20px;
+    }
 }
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .result {
+        font-size: 24px;
+        border-radius: 20px;
+    }
+}
+
 
 button.play-again {
     width: 240px;
     height: 120px;
-    border-radius: 120px 120px 120px 120px;
+    border-radius: 120px;
     border: 10px outset rgb(179, 179, 179);
     box-shadow: 8px 8px rgb(55, 68, 71); ;
     font-family: 'Irish Grover', cursive;
@@ -96,24 +243,80 @@ button.play-again {
     margin-top: 20px;
 }
 
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    button.play-again  {
+        width: 200px;
+        height: 100px;
+        font-size: 20px;
+        margin-top:12px;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    button.play-again  {
+        width: 100px;
+        height: 100px;
+        font-size: 20px;
+        margin-top:5px;
+    }
+}
+
 
 .all-buttons {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    
 }
 
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    .all-buttons  {
+        gap: 20px;
+    }
+}
+
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .all-buttons {
+        gap: 15px;
+    }
+}
+
+
 .buttons {
+    height: 100px;
+    background-color: rgba(240, 229, 132, 0.9);
+    border-radius: 30px;
+    padding: 45px 45px;
+    box-shadow: 16px 16px rgb(55, 68, 71);
+
     display: flex;
     flex-wrap: wrap;
     justify-content:space-evenly;
     align-items: center;
-    height: 100px;
-    width: 485px;
-    background-color: rgba(240, 229, 132, 0.9);
-    border-radius: 30px 30px 0 0;
-    padding: 45px 0;
-    box-shadow: 16px 16px rgb(55, 68, 71);
+    gap:30px;
+    flex: 1;
+    
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    .buttons  {
+        padding: 15px 15px;
+        gap: 20px;
+        border-radius: 20px;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .buttons {
+        padding: 15px 15px;
+        gap: 15px;
+        border-radius: 15px;
+        height: 100%;
+
+        flex-direction: column;
+    }
 }
 
 
@@ -130,54 +333,89 @@ button.play-again {
     font-size: 24px;
 }
 
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    .buttons button  {
+        width: 100px;
+        height: 100px;
+        font-size: 20px;
+    }
+}
+
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .buttons button {
+        width: 100px;
+        height: 100px;
+        font-size: 20px;
+    }
+}
+
+
 button:disabled {
     background-color: rgb(150, 149, 149);
     color: rgb(206, 204, 204);
 
 }
 
+
 .buttons2 {
     display: flex;
     justify-content:center;
     align-items: center;
-    width: 170px;
-    height: 100px;
+
+    width: 130px;
+    height: 130px;
     background-color: rgba(240, 229, 132, 0.9);
-    border-radius: 0 0 30px 30px;
-    padding: 45px 0;
+    border-radius: 30px;
+    padding: 35px;
     box-shadow: 16px 16px rgb(55, 68, 71);
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    .buttons2  {
+        border-radius: 20px;
+        max-width: 130px;
+        max-height:130px;
+        padding:0px;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .buttons2 {
+        padding: 15px 15px;
+        border-radius: 15px;
+        max-width: 100%;
+        max-height:100%;
+        padding:0px;
+    }
+}
+
+.left-btn {
+    margin: 0 auto 0 0;
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .left-btn {
+        margin: 0 auto;
+    }
 }
 
 
 .center-btn {
-    margin-left: 160px;
+    margin: 0 auto;
 }
 
+
 .right-btn {
-    margin-left: 320px;
+    margin: 0 0 0 auto;
 } 
 
-/* .buttons2 {
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    background-color: rgba(240, 229, 132, 0.9);
-    border-radius: 0 0 30px 30px;
-    padding: 45px 0;
-    box-shadow: 16px 16px rgb(55, 68, 71);
-} */
-
-
-/* .left-btn {
-    justify-content:flex-start;
-    padding-left: 55px;
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .right-btn {
+        margin: 0 auto;
+    }
 }
 
-
-.right-btn {
-    justify-content:flex-end;
-    padding-right: 55px;
-} */
 
 .computers-btn {
     width: 120px;
@@ -192,13 +430,44 @@ button:disabled {
     font-size: 24px;
 }
 
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    .computers-btn  {
+        width: 100px;
+        height: 100px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .computers-btn {
+        width: 100px;
+        height: 100px;
+        font-size: 20px;
+    }
+}
+
+
 .chosen{
     transform: scale(1.1);
 }
 
+
 .text-below {
     max-width: 1000px;
     margin-top: -100px;
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    .text-below {
+        max-width: 900px;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    .text-below {
+        max-width: 600px;
+        margin-top: -20px;
+    }
 }
 
 
@@ -206,13 +475,38 @@ h1.game-name {
     color:#8299a0ef;
     text-shadow: 10px 10px rgb(55, 68, 71, 0.8);
     font-family: 'Irish Grover', cursive;
-    font-size: 255px;
+    font-size: 200px;
     line-height: 200px;
-    /* z-index: -1; */
-    
+
+    position: absolute;
+    left: 20%; 
+    right: 20%;
+    margin: 0 auto;
+    bottom: 50px;
+    z-index: -1;
 }
 
+@media screen and (min-width: 601px) and (max-width: 1000px){
+    h1.game-name  {
+        font-size: 160px;
+        line-height: 150px;
 
+        left: 10%;
+        right: 10%;
+        bottom: 0px;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 600px){
+    h1.game-name {
+        font-size: 90px;
+        line-height: 75px;
+
+        left: 0%;
+        right: 0%;
+        bottom: 30px;
+    }
+}
 
 
 
